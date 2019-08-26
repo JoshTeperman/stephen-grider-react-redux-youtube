@@ -11,6 +11,10 @@ class App extends Component {
     this.state = { videos: [], selectedVideo: null }
   }
 
+  componentDidMount() {
+    this.onTermSubmit('conan obrien')
+  }
+
   onTermSubmit = async (term) => {
     const response = await youtube.get('/search', {
       params: {
